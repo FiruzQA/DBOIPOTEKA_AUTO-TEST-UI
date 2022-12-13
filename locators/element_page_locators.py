@@ -30,3 +30,6 @@ class BetweenMoneyTransferLocators:
     CLICK_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
     PAGE_DOWN_ELEMENT = (By.CSS_SELECTOR, "div[class='br-dash-box-content br-dash-box-key _UNIQ_br_dash_box_draw_brc"
                                           " hide-BLOCKED hide-CLOSED hide-PAID dash-style-line hide-hidden']")
+    HUMO_OTHER = (By.XPATH, "//div[text()='anor bank']")
+    HUMO_OTHER_SECOND = (By.XPATH, "//div[text()='TBCBANK']")
+    MY_WALLET = (By.XPATH, "//div[text()='Текущий счёт']")
