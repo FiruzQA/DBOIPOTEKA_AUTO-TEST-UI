@@ -5,6 +5,7 @@ from locators.element_page_locators import BetweenMoneyTransferLocators
 from locators.element_page_locators import SmartMoneyTransferLocators
 from locators.element_page_locators import TransferWithNumberLocators
 from pages.base_page import BasePage
+from selenium.webdriver.common.keys import Keys
 
 
 class LogInPage(BasePage):
@@ -505,7 +506,7 @@ class TransferWithNumber(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
 
-    def humo_other_to_client_number(self):
+    def humo_other_to_client_number(self, type_click):
         client_info = next(generated_person())
         number = client_info.loginnumber
         password = client_info.password
