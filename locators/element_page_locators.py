@@ -81,3 +81,10 @@ class TransferWithNumberLocators:
     PUSH_SMS = (By.CSS_SELECTOR, "input[placeholder='Код из PUSH/SMS']")
     CLICK_NEXT_SECOND = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-ok pri']")
     BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
+
+class BondWithBankLocators:
+    NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
+    PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
+    SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
+
+    CLICK_CHAT_BANK = (By.XPATH, "//div[text()='Чат с Банком']")
