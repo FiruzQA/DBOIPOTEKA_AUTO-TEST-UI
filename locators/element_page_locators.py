@@ -6,7 +6,7 @@ class LogInLocators:
     NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
     PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
     SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
-    TEXT = (By.CSS_SELECTOR, "div[class='br-message']")
+    TEXT = (By.CSS_SELECTOR, "//div[text()='Неверно указано имя пользователя или пароль']")
     CLOSE_ERROR = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-cancel']")
 
 
@@ -33,6 +33,10 @@ class BetweenMoneyTransferLocators:
     HUMO_OTHER = (By.XPATH, "//div[text()='anor bank']")
     HUMO_OTHER_SECOND = (By.XPATH, "//div[text()='TBCBANK']")
     MY_WALLET = (By.XPATH, "//div[text()='Текущий счёт']")
+    CHECK_STORY = (By.XPATH, "//div[text()='История']")
+    UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
+                               "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
+                               "tab_history_refresh _action_BR_tab_history_refresh']")
 
 
 class SmartMoneyTransferLocators:
@@ -58,6 +62,10 @@ class SmartMoneyTransferLocators:
     CLICK_NEXT_SECOND = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-ok pri']")
     CLICK_CONFIRM = (By.XPATH, "//button[text()='Подтверждаю']")
     BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
+    CHECK_STORY = (By.XPATH, "//div[text()='История']")
+    UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
+                               "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
+                               "tab_history_refresh _action_BR_tab_history_refresh']")
 
 
 class TransferWithNumberLocators:
@@ -82,6 +90,11 @@ class TransferWithNumberLocators:
     CLICK_NEXT_SECOND = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-ok pri']")
     BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
     PAGE_DOWN = (By.XPATH, "//td[@class='br-dash-box-alter-menu br-popup-toggle'][1]")
+    CHECK_STORY = (By.XPATH, "//div[text()='История']")
+    UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
+                               "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
+                               "tab_history_refresh _action_BR_tab_history_refresh']")
+
 
 class BondWithBankLocators:
     NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
@@ -90,9 +103,49 @@ class BondWithBankLocators:
 
     CLICK_CHAT_BANK = (By.XPATH, "//div[text()='Чат с Банком']")
 
+
 class NegativeLogInLocators:
     NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
     PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
     SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
     TEXT = (By.CSS_SELECTOR, "div[class='br-message']")
     CLOSE_ERROR = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-cancel']")
+
+
+class ChangePhotoLocators:
+    NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
+    PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
+    SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
+
+    CLICK_UP_PONEL = (By.CSS_SELECTOR, "div[class='br-dash-top-ava-letter br-personal-ava has-photo']")
+    CLICK_TO_MY_PROFILE = (By.XPATH, "//div[@class='br-popup-action-icon br-icons-lib br_icon_home']"
+                                     "//following-sibling::div")
+    CLICK_ON_PHOTO = (By.CSS_SELECTOR, "div[class='br-personal-ava has-photo']")
+    CLICK_TO_DOWNLOAD = (By.XPATH, "//div[text()='Загрузить']")
+
+
+class DepositsLocators:
+    NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
+    PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
+    SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
+    PRODUCTS_AND_SERVICE = (By.XPATH, "//div[text()='Продукты и услуги']")
+    DEPOSITS = (By.XPATH, "//*[@id='brt_deposits']/table[1]/tbody/tr/td[2]/div/div[2]")
+    OFORMIT_QULAY = (By.XPATH, "//div[@id='brv_deposit_offers_action_3']/button[text()='Оформить']")
+    ISTOCHNIK = (By.CSS_SELECTOR, "input[placeholder='Источник открытия вклада']")
+    WALLET = (By.XPATH, "//div[text()='Текущий счёт']")
+    PERCENT_TO_WALLET = (By.CSS_SELECTOR, "input[placeholder='Зачисление процентов']")
+    PERCENT_TO_WALLET_SECOND = (By.XPATH, "//td[text()='Зачислить проценты на текущий счет']")
+    TAG_SUMMA = (By.CSS_SELECTOR, "input[placeholder='Сумма вклада SUM UZB']")
+    BUTTON_OPEN_DEP = (By.XPATH, "//button[text()='Открыть вклад']")
+    BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
+    CHECK_STORY = (By.XPATH, "//div[text()='История']")
+    REQUESTS = (By.XPATH, "//div[text()='Заявки']")
+    UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
+                               "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
+                               "tab_history_refresh _action_BR_tab_history_refresh']")
+    OFORMIT_NIHOL_3 = (By.XPATH, "//span[@id='deposits_action_0']//button")
+    OFORMIT_NIHOL_6 = (By.XPATH, "//span[@id='deposits_action_1']//button")
+    OFORMIT_NIHOL_12 = (By.XPATH, "//span[@id='deposits_action_2']//button")
+
+
+

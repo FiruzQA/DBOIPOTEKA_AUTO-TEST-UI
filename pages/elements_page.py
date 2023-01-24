@@ -1,4 +1,7 @@
 import time
+
+from selenium.webdriver.common.keys import Keys
+
 from generator.generator import generated_person
 from locators.element_page_locators import LogInLocators
 from locators.element_page_locators import BetweenMoneyTransferLocators
@@ -6,20 +9,6 @@ from locators.element_page_locators import SmartMoneyTransferLocators
 from locators.element_page_locators import TransferWithNumberLocators
 from pages.base_page import BasePage
 from selenium.webdriver.common.keys import Keys
-
-
-class LogInPage(BasePage):
-    locators = LogInLocators
-
-    def login_to_account(self):
-        client_info = next(generated_person())
-        number = client_info.loginnumber
-        password = client_info.password
-        self.element_is_visible(self.locators.NUMBER).send_keys(number)
-        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
-        self.element_is_visible(self.locators.SIGNIN).click()
-        time.sleep(5)
-        return number, password
 
 
 class BetweenTransferUzCardIpoteka(BasePage):
@@ -47,6 +36,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_ipoteka_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -69,6 +61,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
@@ -91,6 +86,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_ipoteka_to_my_wallet(self):
         client_info = next(generated_person())
@@ -113,6 +111,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # HUMO-IPOTEKA
 
@@ -137,6 +138,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_ipoteka_to_uz_card_other(self):
         client_info = next(generated_person())
@@ -159,6 +163,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
@@ -181,6 +188,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_ipoteka_to_my_wallet(self):
         client_info = next(generated_person())
@@ -203,6 +213,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # HUMO OTHER
 
@@ -227,6 +240,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_other_to_humo_other(self):
         client_info = next(generated_person())
@@ -249,6 +265,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_other_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
@@ -271,6 +290,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_other_to_uz_card_other(self):
         client_info = next(generated_person())
@@ -293,6 +315,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_humo_other_to_my_wallet(self):
         client_info = next(generated_person())
@@ -315,6 +340,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # UZ_CARD OTHER
 
@@ -339,6 +367,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_other_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -361,6 +392,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_other_to_humo_other(self):
         client_info = next(generated_person())
@@ -383,6 +417,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_uz_card_other_to_my_wallet(self):
         client_info = next(generated_person())
@@ -405,6 +442,9 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.CLICK_NEXT).click()
         self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_wallet_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
@@ -425,8 +465,11 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.TAG_SUMMA).send_keys(summa)
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT).click()
-        # self.element_is_visible(self.locators.CLICK_CONFIRM).click()
+        self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def between_wallet_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -447,8 +490,11 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.TAG_SUMMA).send_keys(summa)
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT).click()
-        # self.element_is_visible(self.locators.CLICK_CONFIRM).click()
+        self.element_is_visible(self.locators.CLICK_CONFIRM).click()
         self.element_is_visible(self.locators.CLICK_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 
 class TransferWithNumber(BasePage):
@@ -479,6 +525,9 @@ class TransferWithNumber(BasePage):
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def humo_ipoteka_to_client_number(self):
         client_info = next(generated_person())
@@ -505,8 +554,11 @@ class TransferWithNumber(BasePage):
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
-    def humo_other_to_client_number(self, type_click):
+    def humo_other_to_client_number(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
         password = client_info.password
@@ -531,6 +583,9 @@ class TransferWithNumber(BasePage):
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def uz_card_other_to_client_number(self):
         client_info = next(generated_person())
@@ -557,6 +612,9 @@ class TransferWithNumber(BasePage):
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def my_wallet_to_client_number(self):
         client_info = next(generated_person())
@@ -583,6 +641,9 @@ class TransferWithNumber(BasePage):
         time.sleep(3)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 
 class SmartMoneyTransfer(BasePage):
@@ -617,6 +678,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_ipoteka_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
@@ -645,6 +709,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_ipoteka_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -673,6 +740,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
@@ -701,6 +771,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # HUMO IPOTEKA
 
@@ -731,6 +804,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_ipoteka_to_uz_card_other(self):
         client_info = next(generated_person())
@@ -759,6 +835,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_ipoteka_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -787,6 +866,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
@@ -815,6 +897,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # HUMO OTHER
 
@@ -845,6 +930,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_other_to_humo_other(self):
         client_info = next(generated_person())
@@ -873,6 +961,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_other_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
@@ -901,6 +992,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_humo_other_to_uz_card_other(self):
         client_info = next(generated_person())
@@ -929,6 +1023,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # UZ_CARD OTHER
 
@@ -959,6 +1056,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_other_to_uz_card_other(self):
         client_info = next(generated_person())
@@ -987,6 +1087,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_other_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -1015,6 +1118,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_uz_card_other_to_humo_other(self):
         client_info = next(generated_person())
@@ -1043,6 +1149,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
 # WALLET
 
@@ -1072,6 +1181,9 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
 
     def smart_wallet_to_humo_ipoteka(self):
         client_info = next(generated_person())
@@ -1099,3 +1211,6 @@ class SmartMoneyTransfer(BasePage):
         time.sleep(2)
         self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
         self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.UPDATE).click()
