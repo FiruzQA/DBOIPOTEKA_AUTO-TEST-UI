@@ -1,7 +1,10 @@
 import time
+
+from selenium.webdriver.common.keys import Keys
+
 from generator.generator import generated_person, generated_file
 from locators.element_page_locators import BondWithBankLocators, NegativeLogInLocators, ChangePhotoLocators, \
-    LogInLocators, DepositsLocators
+    LogInLocators, DepositsLocators, CreditLocators
 from pages.base_page import BasePage
 import requests
 
@@ -35,7 +38,7 @@ class BondWithBank(BasePage):
             if request.status_code == 200:
                 click_link.click()
                 return request.status_code
-        except AssertionError as a:
+        except FileNotFoundError as a:
             print(a)
 
 
@@ -182,3 +185,156 @@ class Deposits(BasePage):
         self.element_is_visible(self.locators.REQUESTS).click()
         time.sleep(2)
         self.element_is_visible(self.locators.UPDATE).click()
+
+
+class Credit(BasePage):
+    locators = CreditLocators()
+
+    def online_credit(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        push = client_info.push_sms
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(3)
+        self.element_is_visible(self.locators.PRODUCTS_AND_SERVICE).click()
+        self.element_is_visible(self.locators.CHOOSE_CREDIT).click()
+        self.element_is_visible(self.locators.CLICK_TERM_OF_CREDIT).click()
+        self.element_is_visible(self.locators.TERM_OF_CREDIT).click()
+        self.element_is_visible(self.locators.RADIO_BUTTON_ANNUITE).click()
+        time.sleep(2)
+        self.element_is_visible(self.locators.CHECK_BOX_OFERTA).click()
+        self.element_is_visible(self.locators.CLICK_BUTTON_SEND).click()
+        time.sleep(3)
+        self.element_is_visible(self.locators.PUSH_SMS).send_keys(push)
+        self.element_is_visible(self.locators.CLICK_NEXT_SECOND).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.element_is_visible(self.locators.CHECK_STORY).click()
+        self.element_is_visible(self.locators.REQUESTS).click()
+        time.sleep(7)
+        self.element_is_visible(self.locators.UPDATE).click()
+
+    def replenishment_credit_wallet(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.REPAY_BUTTON).click()
+        self.element_is_visible(self.locators.ISTOCHNIK).click()
+        self.element_is_visible(self.locators.CHOOSE_WALLET).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.CONTINUE_BUTTON).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))
+
+    def replenishment_credit_uz_card_ipoteka(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.REPAY_BUTTON).click()
+        self.element_is_visible(self.locators.ISTOCHNIK).click()
+        self.element_is_visible(self.locators.CHOOSE_UZCARD_IPOTEKA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.CONTINUE_BUTTON).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))
+
+    def replenishment_credit_uz_card_other(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.REPAY_BUTTON).click()
+        self.element_is_visible(self.locators.ISTOCHNIK).click()
+        self.element_is_visible(self.locators.CHOOSE_UZCARD_OTHER).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.CONTINUE_BUTTON).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))
+
+    def replenishment_credit_humo_ipoteka(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.REPAY_BUTTON).click()
+        self.element_is_visible(self.locators.ISTOCHNIK).click()
+        self.element_is_visible(self.locators.CHOOSE_HUMO_IPOTEKA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.CONTINUE_BUTTON).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))
+
+    def replenishment_credit_humo_other(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.REPAY_BUTTON).click()
+        self.element_is_visible(self.locators.ISTOCHNIK).click()
+        self.element_is_visible(self.locators.CHOOSE_HUMO_OTHER).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.CONTINUE_BUTTON).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))
+
+    def loan_repayments_credit(self):
+        client_info = next(generated_person())
+        number = client_info.loginnumber
+        password = client_info.password
+        summa = client_info.summa
+        self.element_is_visible(self.locators.NUMBER).send_keys(number)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(password)
+        self.element_is_visible(self.locators.SIGNIN).click()
+        time.sleep(5)
+        self.element_is_visible(self.locators.CHOOSE_EXIST_CREDIT).click()
+        self.element_is_visible(self.locators.LOAN_REPAYMENT_BUTTON).click()
+        self.element_is_visible(self.locators.TAG_SUMMA).click()
+        self.element_is_visible(self.locators.TAG_SUMMA_SECOND).send_keys(summa)
+        time.sleep(3)
+        self.element_is_visible(self.locators.CLICK_NEXT).click()
+        self.element_is_visible(self.locators.BUTTON_CLOSE).click()
+        self.action_click(self.element_is_visible(self.locators.PAGE_DOWN))

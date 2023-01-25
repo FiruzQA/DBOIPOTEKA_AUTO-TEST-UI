@@ -148,4 +148,48 @@ class DepositsLocators:
     OFORMIT_NIHOL_12 = (By.XPATH, "//span[@id='deposits_action_2']//button")
 
 
+class CreditLocators:
+    # Оформление кредита
+    NUMBER = (By.CSS_SELECTOR, "input[placeholder='Телефон']")
+    PASSWORD = (By.CSS_SELECTOR, "input[placeholder='Пароль'")
+    SIGNIN = (By.CSS_SELECTOR, "button[class='br-button pri br-login-click-enter']")
+    PRODUCTS_AND_SERVICE = (By.XPATH, "//div[text()='Продукты и услуги']")
+    CHOOSE_CREDIT = (By.XPATH, "//span[@id='credits_action_0']//button")
+    CLICK_TERM_OF_CREDIT = (By.CSS_SELECTOR, "input[placeholder='Срок кредита (мес.)']")
+    TERM_OF_CREDIT = (By.XPATH, "//td[text()='36']")
+    RADIO_BUTTON_ANNUITE = (By.XPATH, "//tr[@class='br-input-list-tr br-input-list-multi-value-ANNUITE']")
+    CHECK_BOX_OFERTA = (By.XPATH, "/html/body/div/div[2]/div/div[4]/div/div/table/tbody/tr/td/div/div/table/tbody/tr/"
+                                  "td[2]/div[4]/table/tr[11]/td[2]/div/table/tbody/tr[1]/td[1]/div[1]/table/tbody/tr"
+                                  "/td/table/tbody/tr/td[1]/table/tbody/tr/td/div")
+    CLICK_BUTTON_SEND = (By.XPATH, "//button[text()='Отправить']")
+    PUSH_SMS = (By.CSS_SELECTOR, "input[placeholder='Код из PUSH/SMS']")
+    CLICK_NEXT_SECOND = (By.CSS_SELECTOR, "button[class='br-button br-dialog-button-ok pri']")
+    BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
+    CHECK_STORY = (By.XPATH, "//div[text()='История']")
+    REQUESTS = (By.XPATH, "//div[text()='Заявки']")
+    UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
+                               "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
+                               "tab_history_refresh _action_BR_tab_history_refresh']")
+    # Пополнение и погашение кредита
+    CHOOSE_EXIST_CREDIT = (By.XPATH, "//div[text()='Не погашен']")
+    REPAY_BUTTON = (By.XPATH, "//div[text()='Погасить']")
+    ISTOCHNIK = (By.CSS_SELECTOR, "input[placeholder='Источник']")
+    CHOOSE_WALLET = (By.XPATH, "//div[text()='Текущий счёт']")
+    CHOOSE_UZCARD_IPOTEKA = (By.XPATH, "//div[text()='MY UZCARD CARD SALARY']")
+    CHOOSE_UZCARD_OTHER = (By.XPATH, "//div[text()='капитал']")
+    CHOOSE_HUMO_IPOTEKA = (By.XPATH, "//div[text()='HUMO CARD PHYSICAL']")
+    CHOOSE_HUMO_OTHER = (By.XPATH, "//div[@class='br-product-sel-text-name product-name product-wid-name-giyhYTZi"
+                                   "AtNuekYE1Hhhs5amCx9qQgsgYOlLBMOM9FaDePQ0KuqeO5NZQf0T']")
+    TAG_SUMMA = (By.CSS_SELECTOR, "input[style='text-align: right;']")
+    TAG_SUMMA_SECOND = (By.CSS_SELECTOR, "input[placeholder='Сумма']")
+    CLICK_NEXT = (By.XPATH, "//div[@class='br-dialog-body-actions']//button")
+    CONTINUE_BUTTON = (By.XPATH, "//button[text()='Продолжить']")
+    PAGE_DOWN = (By.XPATH, "//td[text()='Остаток на счете для погашения']")
+
+    LOAN_REPAYMENT_BUTTON = (By.XPATH, "//div[text()='Досрочное погашение']")
+
+
+
+
+
 
