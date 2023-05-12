@@ -1,7 +1,6 @@
 import time
-
+import allure
 from selenium.webdriver.common.keys import Keys
-
 from generator.generator import generated_person
 from locators.element_page_locators import LogInLocators
 from locators.element_page_locators import BetweenMoneyTransferLocators
@@ -15,6 +14,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
     locators = BetweenMoneyTransferLocators
 # UZ_CARD-IPOTEKA
 
+    @allure.step("between_uz_card_ipoteka_to_uz_card_other")
     def between_uz_card_ipoteka_to_uz_card_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -40,6 +40,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_ipoteka_to_humo_ipoteka")
     def between_uz_card_ipoteka_to_humo_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -65,6 +66,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_ipoteka_to_humo_other")
     def between_uz_card_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -90,6 +92,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_ipoteka_to_my_wallet")
     def between_uz_card_ipoteka_to_my_wallet(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -117,6 +120,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
 
 # HUMO-IPOTEKA
 
+    @allure.step("between_humo_ipoteka_to_uz_card_ipoteka")
     def between_humo_ipoteka_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -142,6 +146,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_ipoteka_to_uz_card_other")
     def between_humo_ipoteka_to_uz_card_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -167,6 +172,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_ipoteka_to_humo_other")
     def between_humo_ipoteka_to_humo_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -192,6 +198,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_ipoteka_to_my_wallet")
     def between_humo_ipoteka_to_my_wallet(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -218,7 +225,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         self.element_is_visible(self.locators.UPDATE).click()
 
 # HUMO OTHER
-
+    @allure.step("between_humo_other_to_humo_ipoteka")
     def between_humo_other_to_humo_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -244,6 +251,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_other_to_humo_other")
     def between_humo_other_to_humo_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -269,6 +277,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_other_to_uz_card_ipoteka")
     def between_humo_other_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -294,6 +303,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_other_to_uz_card_other")
     def between_humo_other_to_uz_card_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -319,6 +329,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_humo_other_to_my_wallet")
     def between_humo_other_to_my_wallet(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -346,6 +357,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
 
 # UZ_CARD OTHER
 
+    @allure.step("between_uz_card_other_to_uz_card_ipoteka")
     def between_uz_card_other_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -371,6 +383,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_other_to_humo_ipoteka")
     def between_uz_card_other_to_humo_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -396,6 +409,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_other_to_humo_other")
     def between_uz_card_other_to_humo_other(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -421,6 +435,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_uz_card_other_to_my_wallet")
     def between_uz_card_other_to_my_wallet(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -446,6 +461,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_wallet_to_uz_card_ipoteka")
     def between_wallet_to_uz_card_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber
@@ -471,6 +487,7 @@ class BetweenTransferUzCardIpoteka(BasePage):
         time.sleep(5)
         self.element_is_visible(self.locators.UPDATE).click()
 
+    @allure.step("between_wallet_to_humo_ipoteka")
     def between_wallet_to_humo_ipoteka(self):
         client_info = next(generated_person())
         number = client_info.loginnumber

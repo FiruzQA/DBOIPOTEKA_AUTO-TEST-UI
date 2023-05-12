@@ -1,11 +1,10 @@
+import allure
 import time
-
-from selenium.webdriver.common.keys import Keys
-
 from generator.generator import generated_person, generated_file
 from locators.element_page_locators import BondWithBankLocators, NegativeLogInLocators, ChangePhotoLocators, \
     LogInLocators, DepositsLocators, CreditLocators
 from pages.base_page import BasePage
+from selenium.common.exceptions import TimeoutException
 import requests
 
 
@@ -38,9 +37,11 @@ class BondWithBank(BasePage):
             if request.status_code == 200:
                 click_link.click()
                 return request.status_code
-        except FileNotFoundError as a:
-            print(a)
-
+        except TimeoutException:
+            request = requests.get(url)
+            if request.status_code == 200:
+                click_link.click()
+                return request.status_code
 
 class NegativeLogIn(BasePage):
     locators = NegativeLogInLocators()

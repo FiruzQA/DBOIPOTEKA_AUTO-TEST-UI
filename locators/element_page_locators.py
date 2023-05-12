@@ -135,7 +135,7 @@ class DepositsLocators:
     WALLET = (By.XPATH, "//div[text()='Текущий счёт']")
     PERCENT_TO_WALLET = (By.CSS_SELECTOR, "input[placeholder='Зачисление процентов']")
     PERCENT_TO_WALLET_SECOND = (By.XPATH, "//td[text()='Зачислить проценты на текущий счет']")
-    TAG_SUMMA = (By.CSS_SELECTOR, "input[placeholder='Сумма вклада SUM UZB']")
+    TAG_SUMMA = (By.CSS_SELECTOR, "input[id='brv_deposit_amount']")
     BUTTON_OPEN_DEP = (By.XPATH, "//button[text()='Открыть вклад']")
     BUTTON_CLOSE = (By.XPATH, "//button[text()='Закрыть']")
     CHECK_STORY = (By.XPATH, "//div[text()='История']")
@@ -143,7 +143,7 @@ class DepositsLocators:
     UPDATE = (By.CSS_SELECTOR, "div[class='br-action-hover br-dash-action br-dash-action-with-icon-br_icon_repeat br_"
                                "icon_repeat has-icon hide-right-icon br-history-tabs-generic-refresh br-accept-dp BR_"
                                "tab_history_refresh _action_BR_tab_history_refresh']")
-    OFORMIT_NIHOL_3 = (By.XPATH, "//span[@id='deposits_action_0']//button")
+    OFORMIT_NIHOL_3 = (By.CSS_SELECTOR, "span[id='deposits_action_0'] button[class='br-button brt-product-button-dark']")
     OFORMIT_NIHOL_6 = (By.XPATH, "//span[@id='deposits_action_1']//button")
     OFORMIT_NIHOL_12 = (By.XPATH, "//span[@id='deposits_action_2']//button")
 
